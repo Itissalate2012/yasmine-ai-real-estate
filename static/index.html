@@ -1,5 +1,191 @@
-<!-- Admin Button -->
-<a href="/admin" class="btn-action-outline" style="text-decoration:none; display:flex; align-items:center; gap:6px;">
-    <i class="fa-solid fa-sliders"></i>
-    <span class="btn-label">⚙️ Modifier / Admin</span>
-</a>
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasmine - Conseillère Immobilière IA de Prestige</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --surface-color: #131c31;
+            --surface-card: #1e293b;
+            --primary-gold: #d4af37;
+            --gold-gradient: linear-gradient(135deg, #f7d070 0%, #d4af37 100%);
+            --accent-blue: #3b82f6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #27354f;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+        /* HEADER */
+        .app-header { background: var(--surface-color); border-bottom: 1px solid var(--border-color); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .header-left { display: flex; align-items: center; gap: 14px; }
+        .agent-avatar-wrap { position: relative; width: 50px; height: 50px; }
+        .agent-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold); }
+        .status-dot { position: absolute; bottom: 2px; right: 2px; width: 12px; height: 12px; background: #10b981; border-radius: 50%; border: 2px solid var(--surface-color); }
+        .agent-info h2 { font-size: 1.15rem; font-weight: 700; display: flex; align-items: center; gap: 8px; color: #fff; }
+        .agent-badge { background: rgba(212, 175, 55, 0.15); color: #f7d070; font-size: 0.75rem; padding: 2px 8px; border-radius: 20px; font-weight: 600; }
+        .agent-tagline { font-size: 0.8rem; color: var(--text-muted); }
+
+        .header-right { display: flex; align-items: center; gap: 12px; }
+        .lang-select { background: var(--surface-card); border: 1px solid var(--border-color); color: #fff; padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; outline: none; }
+
+        /* CHAT CONTAINER */
+        .chat-main { flex: 1; display: flex; flex-direction: column; max-width: 900px; width: 100%; margin: 0 auto; padding: 1.5rem; overflow: hidden; }
+        .chat-messages { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; padding-right: 8px; }
+
+        .message { display: flex; gap: 12px; max-width: 85%; animation: fadeIn 0.3s ease; }
+        .message.bot { align-self: flex-start; }
+        .message.user { align-self: flex-end; flex-direction: row-reverse; }
+
+        .msg-bubble { padding: 14px 18px; border-radius: var(--radius-lg); font-size: 0.95rem; line-height: 1.5; }
+        .message.bot .msg-bubble { background: var(--surface-color); border: 1px solid var(--border-color); color: #f1f5f9; border-top-left-radius: 4px; }
+        .message.user .msg-bubble { background: #2563eb; color: #fff; border-top-right-radius: 4px; }
+
+        /* PROPERTY CARD */
+        .property-card { background: var(--surface-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; margin-top: 10px; max-width: 320px; }
+        .property-img { width: 100%; height: 160px; object-fit: cover; }
+        .property-info { padding: 12px; }
+        .property-price { font-size: 1.1rem; font-weight: 700; color: #10b981; margin: 4px 0; }
+        .property-specs { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* INPUT BAR */
+        .chat-input-bar { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 8px 14px; display: flex; align-items: center; gap: 10px; margin-top: 1rem; }
+        .chat-input { flex: 1; background: transparent; border: none; color: #fff; font-size: 0.95rem; outline: none; padding: 8px; }
+        .chat-input::placeholder { color: var(--text-muted); }
+        .btn-icon { background: transparent; border: none; color: var(--text-muted); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; font-size: 1.1rem; }
+        .btn-icon:hover { color: #fff; background: var(--surface-card); }
+        .btn-send { background: var(--gold-gradient); color: #000; font-weight: bold; }
+        .btn-send:hover { transform: scale(1.05); }
+
+        .quick-suggestions { display: flex; gap: 8px; overflow-x: auto; padding: 8px 0; margin-top: 4px; }
+        .chip { background: var(--surface-color); border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; white-space: nowrap; transition: 0.2s; }
+        .chip:hover { border-color: var(--primary-gold); color: #fff; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <!-- EN-TÊTE ÉPURÉ CLIENT (SANS BOUTON ADMIN) -->
+    <header class="app-header">
+        <div class="header-left">
+            <div class="agent-avatar-wrap">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Yasmine" class="agent-avatar">
+                <span class="status-dot"></span>
+            </div>
+            <div class="agent-info">
+                <h2>Yasmine <span class="agent-badge"><i class="fa-solid fa-crown"></i> Conseillère IA</span></h2>
+                <p class="agent-tagline">Offres, Prix & Disponibilités en temps réel</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <select id="lang-select" class="lang-select">
+                <option value="auto">🌐 Langue : Auto</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="ar">🇲🇦/🇸🇦 العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ZONE DE CHAT -->
+    <main class="chat-main">
+        <div id="chat-messages" class="chat-messages">
+            <!-- Message de bienvenue -->
+            <div class="message bot">
+                <div class="msg-bubble">
+                    Bonjour ! Je suis <strong>Yasmine</strong>, votre conseillère immobilière dédiée. 🏢✨<br>
+                    Comment puis-je vous orienter aujourd'hui ? Avez-vous une ville de préférence, ou recherchez-vous une typologie spécifique (S+1, S+2, Penthouse...) ?
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-suggestions">
+            <div class="chip" onclick="quickSend('Quels sont vos appartements disponibles et leurs prix ?')">🛋️ Appartements disponibles</div>
+            <div class="chip" onclick="quickSend('Parlez-moi des projets et de leurs emplacements')">📍 Emplacements des projets</div>
+            <div class="chip" onclick="quickSend('Avez-vous des facilités de paiement ?')">💳 Modalités de paiement</div>
+        </div>
+
+        <div class="chat-input-bar">
+            <input type="text" id="user-input" class="chat-input" placeholder="Posez votre question à Yasmine..." onkeydown="if(event.key==='Enter') sendMessage()">
+            <button class="btn-icon btn-send" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </main>
+
+    <script>
+        const chatBox = document.getElementById('chat-messages');
+        const inputField = document.getElementById('user-input');
+        let conversationHistory = [];
+
+        function appendMessage(role, text, cards = []) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${role}`;
+            
+            let cardsHtml = '';
+            if (cards && cards.length > 0) {
+                cards.forEach(apt => {
+                    const photo = (apt.photos && apt.photos.length > 0) ? apt.photos[0] : '';
+                    cardsHtml += `
+                        <div class="property-card">
+                            <img src="${photo}" class="property-img" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80'">
+                            <div class="property-info">
+                                <strong>${apt.title_fr || 'Appartement'}</strong>
+                                <div class="property-price">${(apt.price_mad || 0).toLocaleString()} MAD</div>
+                                <div class="property-specs">📐 ${apt.surface_m2 || 0} m² (${apt.typology || 'S+2'})</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            msgDiv.innerHTML = `<div class="msg-bubble">${text.replace(/\n/g, '<br>')}${cardsHtml}</div>`;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const text = inputField.value.trim();
+            if (!text) return;
+            
+            appendMessage('user', text);
+            inputField.value = '';
+            conversationHistory.push({ role: 'user', content: text });
+
+            try {
+                const lang = document.getElementById('lang-select').value;
+                const res = await fetch('/api/chat/text', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: text,
+                        conversation_history: conversationHistory,
+                        language: lang
+                    })
+                });
+                const data = await res.json();
+                appendMessage('bot', data.response_text, data.apartment_cards);
+                conversationHistory.push({ role: 'assistant', content: data.response_text });
+            } catch (err) {
+                appendMessage('bot', "Désolée, une erreur de communication est survenue. Veuillez réessayer.");
+            }
+        }
+
+        function quickSend(text) {
+            inputField.value = text;
+            sendMessage();
+        }
+    </script>
+</body>
+</html>
