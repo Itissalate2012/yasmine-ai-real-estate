@@ -1,0 +1,428 @@
+{
+  "projects": [
+    {
+      "id": "proj-zenata",
+      "name": "Les residences Beaulieu",
+      "tagline_fr": "Résidence d'exception en front de mer avec marina privée et parcs paysagers",
+      "tagline_ar": "مجمع سكني فاخر على الواجهة البحرية مع مارينا خاصة وحدائق خلابة",
+      "city": "zenata/casablanca",
+      "district": "Côte Est / Front de Mer",
+      "delivery_date": "4ème Trimestre 2026",
+      "standing": "Haut Standing / Luxe",
+      "promoter": "Groupe Prestige Immobilier",
+      "hero_image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        {
+          "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Façade et vue d'ensemble du complexe face à la mer",
+          "caption_ar": "الواجهة المعمارية والإطلالة البحرية"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Piscine à débordement et front de marina",
+          "caption_ar": "المسبح اللا متناهي والمارينا"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Jardins paysagers et promenade privée",
+          "caption_ar": "الحدائق والممشى الخاص"
+        }
+      ],
+      "amenities_fr": [
+        "Piscine à débordement chauffée face mer",
+        "Salle de fitness & Spa privé réservé aux résidents",
+        "Conciergerie 24/7 & Sécurité biométrique",
+        "Parking sous-sol avec bornes de recharge pour véhicules électriques",
+        "Jardins botaniques & espaces de jeux enfants",
+        "Système domotique intégral (éclairage, climatisation, volets roulants)"
+      ],
+      "amenities_ar": [
+        "مسبح لا متناهي مدفأ مطل على البحر",
+        "قاعة رياضية وسبا خاص بالساكنين",
+        "خدمة استقبال وحراسة 24/7 مع كاميرات مراقبة",
+        "مرآب سيارات تحت أرضي مزود بشواحن للسيارات الكهربائية",
+        "حدائق ومساحات لعب آمنة للأطفال",
+        "نظام منزل ذكي متكامل للتحكم بالهاتف"
+      ],
+      "special_offers_fr": [
+        "Frais de notaire offerts pour toute signature ce mois-ci",
+        "Remise exclusive de 5% pour règlement au comptant",
+        "Échéancier de paiement sans intérêt étalé sur 24 mois"
+      ],
+      "special_offers_ar": [
+        "مصاريف التوثيق والتسجيل مجانية بالكامل لهذا الشهر",
+        "خصم خاص 5% في حالة الأداء نقداً",
+        "تسهيلات في الدفع بالتقسيط على 24 شهراً بدون فوائد"
+      ],
+      "description_fr": " Les residences Beaulieu est un complexe résidentiel ultra-moderne alliant architecture contemporaine, larges baies vitrées et finitions nobles (marbre de Thala, bois massif, double vitrage thermique). Idéalement situé à 5 minutes de la marina et des écoles internationales.",
+      "description_ar": "مشروع   مجمع سكني فاخر يجمع بين الأصالة والعمارة العصرية، مع إطلالة بانورامية ساحرة على البحر، رخام رفيع، ومسابح خاصة مع حراسة ذكية 24/7."
+    },
+    {
+      "id": "proj-atlas",
+      "name": "Les Terrasses de l'Atlas",
+      "tagline_fr": "Penthouses et duplex modernes avec vue panoramique imprenable",
+      "tagline_ar": "بنتهاوس ودوبلكس عصري بإطلالات ساحرة وموقع هادئ راقٍ",
+      "city": "Marrakech / Casablanca",
+      "district": "Quartier Résidentiel Palmeraie & Oasis",
+      "delivery_date": "2ème Trimestre 2027",
+      "standing": "Ultra Prestige",
+      "promoter": "Atlas Luxury Living",
+      "hero_image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        {
+          "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Façade contemporaine et architecture bioclimatique",
+          "caption_ar": "الواجهة المعمارية الحديثة للإقامة"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Piscine privée suspendue en rooftop",
+          "caption_ar": "المسبح المعلق مع مساحة الاستجمام"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Clubhouse résidents et salon lounge",
+          "caption_ar": "النادي الخاص والمساحات الترفيهية"
+        }
+      ],
+      "amenities_fr": [
+        "Rooftop avec piscine suspendue et solarium",
+        "Clubhouse privé pour résidents avec salon de réception",
+        "Finitions en bois noble (chêne massif) et marbre italien Calacatta",
+        "Isolation phonique et thermique double peau",
+        "Caves privatives & doubles places de parking boxées"
+      ],
+      "amenities_ar": [
+        "سطح بانورامي بمسبح معلق ومساحة استجمام",
+        "نادي خاص بالساكنين وصالة استقبال",
+        "تشطيبات راقية من خشب البلوط والرخام الإيطالي الفاخر",
+        "عزل صوتي وحراري ممتاز",
+        "أقبية خاصة وموقفين للسيارات لكل شقة"
+      ],
+      "special_offers_fr": [
+        "Cuisine italienne haut de gamme entièrement équipée offerte",
+        "Paiement échelonné : 20% à la réservation, 10% par trimestre jusqu'à remise des clés"
+      ],
+      "special_offers_ar": [
+        "مطبخ إيطالي مجهز بالكامل بأحدث الأجهزة مجاناً",
+        "تسهيلات دفع ميسرة: 20% عند الحجز و10% كل 3 أشهر حتى التسليم"
+      ],
+      "description_fr": "Une oasis de sérénité au cœur de la ville avec de généreuses terrasses végétalisées, des volumes spacieux et des vues spectaculaires sur les jardins et couchers de soleil.",
+      "description_ar": "واحة من الهدوء في قلب المدينة مع شرفات واسعة مليئة بالخضرة ومساحات فسيحة وتصميم هندسي باهر."
+    },
+    {
+      "id": "proj-emerald",
+      "name": "Résidence Emerald Green",
+      "tagline_fr": "Appartements familiaux écologiques au cœur d'un parc boisé",
+      "tagline_ar": "شقق عائلية صديقة للبيئة وسط منتزه طبيعي خلاب",
+      "city": "Rabat /  Centre",
+      "district": "Quartier Ambassades & Éco-quartier",
+      "delivery_date": "Immédiate (Prêt à habiter)",
+      "standing": "Grand Standing Éco-responsable",
+      "promoter": "Green Living Developments",
+      "hero_image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        {
+          "url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Résidence éco-conçue au cœur du parc boisé",
+          "caption_ar": "الإقامة البيئية وسط الطبيعة الخلابة"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Parc privé, allées piétonnes et piste de jogging",
+          "caption_ar": "الحديقة الخاصة ومسار الجري"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+          "caption_fr": "Hall d'accueil standing et espaces de coworking",
+          "caption_ar": "صالة الاستقبال ومساحات العمل"
+        }
+      ],
+      "amenities_fr": [
+        "Certification Haute Qualité Environnementale (HQE)",
+        "Panneaux solaires et gestion d'énergie intelligente",
+        "Espaces de coworking pour télétravail",
+        "Piste de jogging & terrain de padel",
+        "Crèche et commerces de proximité au pied de l'immeuble"
+      ],
+      "amenities_ar": [
+        "شهادة بيئية عالية الجودة واستهلاك طاقة منخفض",
+        "ألواح شمسية لتوليد الكهرباء وتسخين المياه",
+        "مساحات عمل مشتركة للعمل عن بعد",
+        "مسار للجري وملعب بادل",
+        "حضانة ومحلات تجارية قرب الإقامة"
+      ],
+      "special_offers_fr": [
+        "Livraison immédiate des clés avec 0% d'apport bancaire initial possible",
+        "Pack électroménager Bosch haut de gamme offert"
+      ],
+      "special_offers_ar": [
+        "تسليم فوري للمفاتيح مع إمكانية التمويل البنكي بنسبة 100%",
+        "باقة أجهزة كهرومنزلية فاخرة مهداة مع الشقة"
+      ],
+      "description_fr": "Idéal pour les familles cherchant le calme, la verdure et la proximité des grands axes. Les appartements bénéficient d'une luminosité traversante toute l'année.",
+      "description_ar": "إقامة إيميرالد جرين البيئية، شقق جاهزة للسكن فوراً بموقع هادئ قرب المدارس والمرافق الحيوية."
+    }
+  ],
+  "apartments": [
+    {
+      "id": "apt-c101",
+      "project_id": "proj-carthage",
+      "project_name": "Les Jardins de Carthage & Marina",
+      "title_fr": "Appartement T2 Vue Jardin & Marina",
+      "title_ar": "شقة بغرفتين وصالون (T2) مطلة على الحديقة والمارينا",
+      "typology": "T2",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "surface_m2": 68,
+      "terrace_m2": 14,
+      "floor": "1er étage",
+      "orientation": "Sud-Est",
+      "price_mad": 1450000,
+      "price_eur": 135000,
+      "status": "Disponible",
+      "special_discount_fr": "-3% pour signature sous 15 jours",
+      "special_discount_ar": "تخفيض 3% عند توقيع العقد خلال 15 يوماً",
+      "photos": [
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"
+      ],
+      "floorplan_image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "highlights_fr": [
+        "Salon lumineux de 32m²",
+        "Cuisine américaine ouverte",
+        "Dressing intégré",
+        "Place parking sous-sol incluse"
+      ],
+      "highlights_ar": [
+        "صالون واسع ومشرق 32 متر",
+        "مطبخ أمريكي مجهز مفتوح",
+        "غرفة ملابس مدمجة",
+        "مكان سيارة تحت أرضي مشمول"
+      ]
+    },
+    {
+      "id": "apt-c204",
+      "project_id": "proj-carthage",
+      "project_name": "Les Jardins de Carthage & Marina",
+      "title_fr": "Appartement T3 Familial Front de Mer",
+      "title_ar": "شقة 3 غرف وصالون (T3) إطلالة مباشرة على البحر",
+      "typology": "T3",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "surface_m2": 112,
+      "terrace_m2": 26,
+      "floor": "3ème étage",
+      "orientation": "Plein Sud",
+      "price_mad": 2350000,
+      "price_eur": 218000,
+      "status": "Disponible",
+      "special_discount_fr": "Frais de notaire 100% pris en charge",
+      "special_discount_ar": "مصاريف التسجيل والتوثيق مجانية بالكامل",
+      "photos": [
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80"
+      ],
+      "floorplan_image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "highlights_fr": [
+        "Suite parentale avec dressing et salle de bain",
+        "Terrasse dînatoire de 26m²",
+        "Climatisation gainée réversible",
+        "Double garage sous-sol"
+      ],
+      "highlights_ar": [
+        "جناح رئيسي مع غرفة ملابس وحمام خاص",
+        "تراس كبير 26 متر مربع",
+        "مكيف مركزي مدمج",
+        "مرآب مزدوج للسيارات"
+      ]
+    },
+    {
+      "id": "apt-c401",
+      "project_id": "proj-carthage",
+      "project_name": "Les Jardins de Carthage & Marina",
+      "title_fr": "Penthouse de Prestige 4 Pièces avec Jacuzzi Privatif",
+      "title_ar": "بنتهاوس فاخر 4 غرف مع جاكوزي خاص وتراس بانورامي",
+      "typology": "Penthouse T4",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "surface_m2": 185,
+      "terrace_m2": 75,
+      "floor": "Dernier étage (4ème)",
+      "orientation": "360° Mer & Montagne",
+      "price_mad": 3950000,
+      "price_eur": 368000,
+      "status": "Disponible",
+      "special_discount_fr": "Pack Ameublement Designer offert pour réservation ce mois-ci",
+      "special_discount_ar": "باقة أثاث عصري من مصمم داخلي مهداة مجاناً",
+      "photos": [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+      ],
+      "floorplan_image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "highlights_fr": [
+        "Ascenseur privatif à clé arrivant directement dans l'appartement",
+        "Rooftop 75m² avec jacuzzi et vue panoramique",
+        "Cheminée contemporaine au bioéthanol",
+        "Finitions marbre Calacatta"
+      ],
+      "highlights_ar": [
+        "مصعد خاص يصل مباشرة داخل الشقة",
+        "سطح خاص 75 متر مربع مع جاكوزي بإطلالة 360 درجة",
+        "مدفأة عصرية راقية",
+        "رخام كالاكاتا إيطالي فاخر"
+      ]
+    },
+    {
+      "id": "apt-a102",
+      "project_id": "proj-atlas",
+      "project_name": "Les Terrasses de l'Atlas",
+      "title_fr": "Duplex Moderne 3 Pièces avec Jardin Privé",
+      "title_ar": "دوبلكس عصري 3 غرف مع حديقة خاصة",
+      "typology": "Duplex T3",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "surface_m2": 130,
+      "terrace_m2": 45,
+      "floor": "Rez-de-Jardin",
+      "orientation": "Sud-Ouest",
+      "price_mad": 2650000,
+      "price_eur": 245000,
+      "status": "Disponible",
+      "special_discount_fr": "Paiement échelonné sur 30 mois sans intérêt",
+      "special_discount_ar": "تسهيلات دفع بالتقسيط على 30 شهراً بدون فائدة",
+      "photos": [
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80"
+      ],
+      "floorplan_image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "highlights_fr": [
+        "Jardin privatif paysagé de 45m²",
+        "Hauteur sous plafond de 3.20m",
+        "Cuisine haut de gamme intégrée",
+        "Domotique pilotable sur smartphone"
+      ],
+      "highlights_ar": [
+        "حديقة خاصة مهيأة بمساحة 45 متر",
+        "ارتفاع السقف 3.20 متر يعطي رحابة استثنائية",
+        "مطبخ ألماني مجهز",
+        "تحكم ذكي من الهاتف"
+      ]
+    },
+    {
+      "id": "apt-a305",
+      "project_id": "proj-atlas",
+      "project_name": "Les Terrasses de l'Atlas",
+      "title_fr": "Appartement T4 Vue Couchant & Golf",
+      "title_ar": "شقة 4 غرف مع إطلالة على الغولف وغروب الشمس",
+      "typology": "T4",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "surface_m2": 160,
+      "terrace_m2": 35,
+      "floor": "3ème étage",
+      "orientation": "Ouest",
+      "price_mad": 3100000,
+      "price_eur": 288000,
+      "status": "Disponible",
+      "special_discount_fr": "Offre spéciale pré-lancement : -4% cette semaine",
+      "special_discount_ar": "عرض خاص قبل الإطلاق: خصم 4% هذا الأسبوع",
+      "photos": [
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "floorplan_image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "highlights_fr": [
+        "Triple salon avec baie vitrée 8 mètres",
+        "3 suites avec salles de bain attenantes",
+        "Chambre de service avec sanitaires",
+        "Box garage fermé"
+      ],
+      "highlights_ar": [
+        "صالون ثلاثي واسع بواجهة زجاجية 8 أمتار",
+        "3 أجنحة نوم مع حمامات خاصة",
+        "غرفة مساعدة منزلية مع حمام",
+        "مرآب مغلق خاص"
+      ]
+    },
+    {
+      "id": "apt-e103",
+      "project_id": "proj-emerald",
+      "project_name": "Résidence Emerald Green",
+      "title_fr": "Studio Moderne Idéal Investissement Locatif",
+      "title_ar": "ستوديو ذكي ومفروش مثالي للاستثمار والإيجار",
+      "typology": "Studio",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "surface_m2": 45,
+      "terrace_m2": 8,
+      "floor": "1er étage",
+      "orientation": "Est",
+      "price_mad": 890000,
+      "price_eur": 82000,
+      "status": "Disponible",
+      "special_discount_fr": "Rendement locatif garanti 8.5% net la 1ère année",
+      "special_discount_ar": "عائد كراء مضمون بنسبة 8.5% صافي في السنة الأولى",
+      "photos": [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"
+      ],
+      "floorplan_image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "highlights_fr": [
+        "Clé en main, entièrement meublé avec goût",
+        "Forte demande locative et Airbnb",
+        "Faibles charges de copropriété",
+        "Livraison immédiate des clés"
+      ],
+      "highlights_ar": [
+        "جاهز للتسليم الفوري ومؤثث بالكامل",
+        "طلب كراء قوي جداً وأرباح شهرية ممتازة",
+        "رسوم صيانة منخفضة",
+        "تسليم المفاتيح في الحال"
+      ]
+    },
+    {
+      "id": "apt-e202",
+      "project_id": "proj-emerald",
+      "project_name": "Résidence Emerald Green",
+      "title_fr": "Appartement T3 Familial Traversant Vue Parc",
+      "title_ar": "شقة 3 غرف عائلية مطلة على الحديقة المركزية",
+      "typology": "T3",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "surface_m2": 105,
+      "terrace_m2": 18,
+      "floor": "2ème étage",
+      "orientation": "Traversant Sud/Nord",
+      "price_mad": 1850000,
+      "price_eur": 172000,
+      "status": "Disponible",
+      "special_discount_fr": "Pack électroménager Bosch complet offert",
+      "special_discount_ar": "باقة أجهزة كهرومنزلية ألمانية بوش كاملة مهداة",
+      "photos": [
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "floorplan_image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+      "highlights_fr": [
+        "Très lumineux, vue dégagée sur les arbres",
+        "Chambre enfants spacieuse avec placards intégrés",
+        "Parquet en chêne massif",
+        "Prêt bancaire à taux préférentiel négocié"
+      ],
+      "highlights_ar": [
+        "مشرقة جداً مع إطلالة مفتوحة على الأشجار",
+        "غرفة أطفال واسعة مع خزائن حائطية",
+        "أرضية خشبية أصيلة",
+        "قرض بنكي بنسبة تفضيلية"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Admin - Gestion du Catalogue Immobilier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #d97706;
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --surface-hover: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --success: #10b981;
+            --danger: #ef4444;
+            --radius: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-title h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .header-title span {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--primary-light);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-light);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+
+        .btn-success {
+            background-color: var(--success);
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background-color: #059669;
+        }
+
+        .btn-secondary {
+            background-color: var(--surface-hover);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background-color: #475569;
+        }
+
+        .btn-danger {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-danger:hover {
+            background-color: var(--danger);
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: var(--surface);
+            color: #fff;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .search-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 8px 14px;
+            border-radius: 6px;
+            color: #fff;
+            width: 320px;
+            font-size: 0.9rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .item-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .item-card:hover {
+            border-color: var(--primary-light);
+        }
+
+        .item-preview-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .item-body {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            background-color: #0b1329;
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-light);
+        }
+
+        .form-control.arabic {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+        }
+
+        .card-footer {
+            padding: 0.75rem 1.25rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #notification {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--success);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        #notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quick-info-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .quick-info-box code {
+            background: rgba(0,0,0,0.4);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #93c5fd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title">
+            <h1>🏢 Yasmine AI - Gestionnaire Immobilier</h1>
+            <span>Mode Modification</span>
+        </div>
+        <div class="header-actions">
+            <a href="/" target="_blank" class="btn btn-secondary">💬 Tester le Chat</a>
+            <button class="btn btn-success" onclick="saveAllChanges()">💾 Sauvegarder les modifications</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="quick-info-box">
+            💡 <strong>Accès direct aux modifications :</strong> Vous pouvez ici modifier les prix (MAD), typologies, disponibilités, surfaces et photos de vos projets et appartements.
+            Dès que vous cliquez sur <code>Sauvegarder les modifications</code>, l'agent IA <strong>Yasmine</strong> intègre instantanément les nouvelles données dans ses calculs et ses réponses aux clients !
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('apartments')">🛋️ Appartements & Prix (<span id="count-apartments">0</span>)</button>
+            <button class="tab-btn" onclick="switchTab('projects')">🏗️ Projets Immobiliers (<span id="count-projects">0</span>)</button>
+        </div>
+
+        <!-- ONGLET APPARTEMENTS -->
+        <div id="tab-apartments" class="tab-content active">
+            <div class="toolbar">
+                <input type="text" id="search-apt" class="search-box" placeholder="🔍 Rechercher (ID, Projet, Type, Prix...)" oninput="renderApartments()">
+                <button class="btn btn-primary" onclick="addNewApartment()">+ Ajouter un Appartement</button>
+            </div>
+            <div id="apartments-list" class="cards-grid"></div>
+        </div>
+
+        <!-- ONGLET PROJETS -->
+        <div id="tab-projects" class="tab-content">
+            <div class="toolbar">
+                <input type="text" id="search-proj" class="search-box" placeholder="🔍 Rechercher un projet..." oninput="renderProjects()">
+                <button class="btn btn-primary" onclick="addNewProject()">+ Ajouter un Projet</button>
+            </div>
+            <div id="projects-list" class="cards-grid"></div>
+        </div>
+    </div>
+
+    <div id="notification">✅ Enregistré avec succès !</div>
+
+    <script>
+        let catalog = {
+            projects: [],
+            apartments: []
+        };
+
+        async function fetchCatalog() {
+            try {
+                const res = await fetch('/api/admin/data');
+                const data = await res.json();
+                catalog = data;
+                document.getElementById('count-apartments').textContent = catalog.apartments.length;
+                document.getElementById('count-projects').textContent = catalog.projects.length;
+                renderApartments();
+                renderProjects();
+            } catch (err) {
+                console.error("Erreur chargement données:", err);
+                alert("Erreur lors de la récupération des données.");
+            }
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            if (tab === 'apartments') {
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
+                document.getElementById('tab-apartments').classList.add('active');
+            } else {
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+                document.getElementById('tab-projects').classList.add('active');
+            }
+        }
+
+        function renderApartments() {
+            const list = document.getElementById('apartments-list');
+            const search = document.getElementById('search-apt').value.toLowerCase();
+            list.innerHTML = '';
+
+            const filtered = catalog.apartments.filter(a => {
+                return (
+                    (a.id && a.id.toLowerCase().includes(search)) ||
+                    (a.title_fr && a.title_fr.toLowerCase().includes(search)) ||
+                    (a.project_name && a.project_name.toLowerCase().includes(search)) ||
+                    (a.typology && a.typology.toLowerCase().includes(search))
+                );
+            });
+
+            filtered.forEach((apt, idx) => {
+                const realIndex = catalog.apartments.indexOf(apt);
+                const card = document.createElement('div');
+                card.className = 'item-card';
+
+                const mainPhoto = (apt.photos && apt.photos.length > 0) ? apt.photos[0] : 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80';
+
+                card.innerHTML = `
+                    <img src="${mainPhoto}" class="item-preview-img" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80'">
+                    <div class="item-body">
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1.5;">
+                                <label>ID Lot</label>
+                                <input type="text" class="form-control" value="${apt.id || ''}" onchange="updateApartment(${realIndex}, 'id', this.value)">
+                            </div>
+                            <div class="form-group" style="flex: 1.5;">
+                                <label>Typologie</label>
+                                <input type="text" class="form-control" value="${apt.typology || 'S+2'}" onchange="updateApartment(${realIndex}, 'typology', this.value)">
+                            </div>
+                            <div class="form-group" style="flex: 1.5;">
+                                <label>Statut</label>
+                                <select class="form-control" onchange="updateApartment(${realIndex}, 'status', this.value)">
+                                    <option value="Disponible" ${apt.status === 'Disponible' ? 'selected' : ''}>Disponible</option>
+                                    <option value="Option" ${apt.status === 'Option' ? 'selected' : ''}>Option</option>
+                                    <option value="Vendu" ${apt.status === 'Vendu' ? 'selected' : ''}>Vendu</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Titre (Français)</label>
+                            <input type="text" class="form-control" value="${apt.title_fr || ''}" onchange="updateApartment(${realIndex}, 'title_fr', this.value)">
+                        </div>
+
+                        <div class="form-group">
+                            <label>العنوان (العربية)</label>
+                            <input type="text" class="form-control arabic" value="${apt.title_ar || ''}" onchange="updateApartment(${realIndex}, 'title_ar', this.value)">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Prix (MAD)</label>
+                                <input type="number" class="form-control" style="color: #6ee7b7; font-weight: bold;" value="${apt.price_mad || 0}" onchange="updateApartment(${realIndex}, 'price_mad', parseFloat(this.value))">
+                            </div>
+                            <div class="form-group">
+                                <label>Surface m²</label>
+                                <input type="number" class="form-control" value="${apt.surface_m2 || 0}" onchange="updateApartment(${realIndex}, 'surface_m2', parseFloat(this.value))">
+                            </div>
+                            <div class="form-group">
+                                <label>Terrasse m²</label>
+                                <input type="number" class="form-control" value="${apt.terrace_m2 || 0}" onchange="updateApartment(${realIndex}, 'terrace_m2', parseFloat(this.value))">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Lien Photo Principale (URL)</label>
+                            <input type="text" class="form-control" value="${mainPhoto}" onchange="updateApartmentPhoto(${realIndex}, this.value)">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Remise / Offre Spéciale (FR)</label>
+                            <input type="text" class="form-control" value="${apt.special_discount_fr || ''}" onchange="updateApartment(${realIndex}, 'special_discount_fr', this.value)">
+                        </div>
+
+                        <div class="form-group">
+                            <label>العرض الخاص (AR)</label>
+                            <input type="text" class="form-control arabic" value="${apt.special_discount_ar || ''}" onchange="updateApartment(${realIndex}, 'special_discount_ar', this.value)">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">${apt.project_name || 'Sans Projet'}</span>
+                        <button class="btn btn-danger" onclick="deleteApartment(${realIndex})">🗑️ Supprimer</button>
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        function renderProjects() {
+            const list = document.getElementById('projects-list');
+            const search = document.getElementById('search-proj').value.toLowerCase();
+            list.innerHTML = '';
+
+            const filtered = catalog.projects.filter(p => {
+                return (
+                    (p.id && p.id.toLowerCase().includes(search)) ||
+                    (p.name && p.name.toLowerCase().includes(search)) ||
+                    (p.city && p.city.toLowerCase().includes(search))
+                );
+            });
+
+            filtered.forEach((p, idx) => {
+                const realIndex = catalog.projects.indexOf(p);
+                const card = document.createElement('div');
+                card.className = 'item-card';
+
+                card.innerHTML = `
+                    <img src="${p.hero_image || 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80'}" class="item-preview-img">
+                    <div class="item-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>ID Projet</label>
+                                <input type="text" class="form-control" value="${p.id || ''}" onchange="updateProject(${realIndex}, 'id', this.value)">
+                            </div>
+                            <div class="form-group" style="flex: 2;">
+                                <label>Nom du Projet</label>
+                                <input type="text" class="form-control" value="${p.name || ''}" onchange="updateProject(${realIndex}, 'name', this.value)">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ville / Quartier</label>
+                                <input type="text" class="form-control" value="${p.city || ''}" onchange="updateProject(${realIndex}, 'city', this.value)">
+                            </div>
+                            <div class="form-group">
+                                <label>Date Livraison</label>
+                                <input type="text" class="form-control" value="${p.delivery_date || ''}" onchange="updateProject(${realIndex}, 'delivery_date', this.value)">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Photo de Couverture (URL)</label>
+                            <input type="text" class="form-control" value="${p.hero_image || ''}" onchange="updateProject(${realIndex}, 'hero_image', this.value)">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description FR</label>
+                            <textarea class="form-control" rows="2" onchange="updateProject(${realIndex}, 'description_fr', this.value)">${p.description_fr || ''}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>الوصف بالعربية</label>
+                            <textarea class="form-control arabic" rows="2" onchange="updateProject(${realIndex}, 'description_ar', this.value)">${p.description_ar || ''}</textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">${p.standing || 'Haut Standing'}</span>
+                        <button class="btn btn-danger" onclick="deleteProject(${realIndex})">🗑️ Supprimer</button>
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        function updateApartment(index, field, value) {
+            catalog.apartments[index][field] = value;
+            if (field === 'price_mad') {
+                catalog.apartments[index].price_eur = Math.round(value / 10.8);
+            }
+        }
+
+        function updateApartmentPhoto(index, url) {
+            if (!catalog.apartments[index].photos) {
+                catalog.apartments[index].photos = [];
+            }
+            if (catalog.apartments[index].photos.length > 0) {
+                catalog.apartments[index].photos[0] = url;
+            } else {
+                catalog.apartments[index].photos.push(url);
+            }
+        }
+
+        function updateProject(index, field, value) {
+            catalog.projects[index][field] = value;
+        }
+
+        function deleteApartment(index) {
+            if (confirm("Supprimer définitivement cet appartement ?")) {
+                catalog.apartments.splice(index, 1);
+                document.getElementById('count-apartments').textContent = catalog.apartments.length;
+                renderApartments();
+            }
+        }
+
+        function deleteProject(index) {
+            if (confirm("Supprimer définitivement ce projet ?")) {
+                catalog.projects.splice(index, 1);
+                document.getElementById('count-projects').textContent = catalog.projects.length;
+                renderProjects();
+            }
+        }
+
+        function addNewApartment() {
+            const defaultProj = catalog.projects[0] || { id: "proj-1", name: "Nouveau Projet" };
+            catalog.apartments.unshift({
+                id: "lot-" + Date.now().toString().slice(-4),
+                project_id: defaultProj.id,
+                project_name: defaultProj.name,
+                typology: "S+2",
+                title_fr: "Nouvel Appartement Moderne",
+                title_ar: "شقة حديثة ومجهزة",
+                floor: 2,
+                surface_m2: 95,
+                terrace_m2: 12,
+                price_mad: 1350000,
+                price_eur: 125000,
+                status: "Disponible",
+                special_discount_fr: "Offre de lancement : -5%",
+                special_discount_ar: "عرض الافتتاح : تخفيض 5%",
+                photos: [
+                    "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80"
+                ],
+                highlights_fr: ["Vue dégagée", "Cuisine équipée"],
+                highlights_ar: ["إطلالة مفتوحة", "مطبخ مجهز"]
+            });
+            document.getElementById('count-apartments').textContent = catalog.apartments.length;
+            renderApartments();
+        }
+
+        function addNewProject() {
+            catalog.projects.unshift({
+                id: "proj-" + Date.now().toString().slice(-4),
+                name: "Nouvelle Résidence Prestige",
+                city: "Casablanca / Rabat",
+                district: "Centre",
+                delivery_date: "Fin 2026",
+                standing: "Luxe & Haut Standing",
+                hero_image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+                description_fr: "Projet résidentiel d'exception.",
+                description_ar: "مشروع سكني راقي بمواصفات عصرية.",
+                amenities_fr: ["Piscine", "Parking"],
+                amenities_ar: ["مسبح", "مرآب"],
+                special_offers_fr: ["Frais de notaire offerts"],
+                special_offers_ar: ["مصاريف التسجيل مجانية"]
+            });
+            document.getElementById('count-projects').textContent = catalog.projects.length;
+            renderProjects();
+        }
+
+        async function saveAllChanges() {
+            try {
+                const res = await fetch('/api/admin/save', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(catalog)
+                });
+                const result = await res.json();
+                showNotification("✅ " + (result.message || "Modifications enregistrées avec succès !"));
+            } catch (err) {
+                console.error("Erreur sauvegarde:", err);
+                alert("Erreur lors de la sauvegarde.");
+            }
+        }
+
+        function showNotification(msg) {
+            const notif = document.getElementById('notification');
+            notif.textContent = msg;
+            notif.classList.add('show');
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 3000);
+        }
+
+        // Init
+        fetchCatalog();
+    </script>
+</body>
+</html>
